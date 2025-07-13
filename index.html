@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Simulator - Beginner Level</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<header>
+    <h1>Secure Password Simulator</h1>
+    <p id="subheading">Test your password strength in real time</p>
+</header>
+
+<body>
+
+    <div class="container">
+        <div class="password-section">
+            <h2>Enter your password:</h2>
+            <input type="password" id="password-input" placeholder="Type your password here..." oninput="checkPassword()">
+            <button onclick="togglePassword()">👁️ Show/Hide</button>
+            
+            <div id="result">
+                <p id="strength-text">Type a password to start</p>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="requirements">
+                <h3>Requirements:</h3>
+                <p id="length-check">❌ At least 8 characters</p>
+                <p id="upper-check">❌ Uppercase letters (A-Z)</p>
+                <p id="lower-check">❌ Lowercase letters (a-z)</p>
+                <p id="number-check">❌ Numbers (0-9)</p>
+                <p id="symbol-check">❌ Symbols (!@#$)</p>
+            </div>
+
+            <div id="tips">
+                <h3>💡 Tips:</h3>
+                <p id="tip-text">Type a password to get tips</p>
+            </div>
+        </div>
+
+        <div class="generator-section">
+            <h2>Generate a secure password:</h2>
+            <p>Length: <span id="length-value">12</span></p>
+            <input type="range" id="length-slider" min="6" max="20" value="12" oninput="updateLength()">
+            
+            <div class="options">
+                <label><input type="checkbox" id="include-upper" checked> Uppercase</label>
+                <label><input type="checkbox" id="include-lower" checked> Lowercase</label>
+                <label><input type="checkbox" id="include-numbers" checked> Numbers</label>
+                <label><input type="checkbox" id="include-symbols" checked> Symbols</label>
+            </div>
+
+            <button onclick="generatePassword()">🎲 Generate Password</button>
+            
+            <div id="generated-result" style="display: none;">
+                <p>Your new password:</p>
+                <input type="text" id="generated-password" readonly>
+                <button onclick="copyPassword()">📋 Copy</button>
+                <button onclick="usePassword()">✅ Use this password</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p>🔒 Remember: Never share your password and use it only on secure sites. For more information: <a href="https://www.cisa.gov/secure-our-world/use-strong-passwords" target="_blank">Use Strong Passwords</a></p>
+    <p>© 2025 Password Simulator. All rights reserved.</p>
+</footer>
+</html>
