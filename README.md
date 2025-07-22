@@ -21,7 +21,7 @@ No data is sent or stored anywhere—everything runs locally in your browser for
 3. **Use the generator** to create a strong password with your preferred options.
 4. **Copy and use** the generated password for your accounts.
 
-## 💡 Technologies Used
+## Technologies Used
 - HTML5
 - CSS3 (responsive, accessible design)
 - JavaScript (vanilla, beginner-friendly)
